@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+    <!-- 背景 -->
+    <rect width="1200" height="700" fill="#ffffff"/>
+    
+    <!-- タイトル -->
+    <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold" fill="#333">MoriP Sort - 処理フロー（前半）</text>
+
+    <!-- チャンク区分の説明（左側に配置） -->
+    <g transform="translate(50, 100)">
+        <rect width="200" height="160" rx="5" fill="#f8f9fa" stroke="#e2e8f0"/>
+        <text x="20" y="30" font-size="16" font-weight="bold" fill="#333">チャンク区分</text>
+        
+        <g transform="translate(20, 50)">
+            <rect x="0" y="0" width="20" height="20" rx="3" fill="#4299e1" opacity="0.8"/>
+            <text x="30" y="15" font-size="14" fill="#333">チャンク1: 1-20</text>
+            
+            <rect x="0" y="30" width="20" height="20" rx="3" fill="#48bb78" opacity="0.8"/>
+            <text x="30" y="45" font-size="14" fill="#333">チャンク2: 21-40</text>
+            
+            <rect x="0" y="60" width="20" height="20" rx="3" fill="#ed8936" opacity="0.8"/>
+            <text x="30" y="75" font-size="14" fill="#333">チャンク4: 61-80</text>
+            
+            <rect x="0" y="90" width="20" height="20" rx="3" fill="#9f7aea" opacity="0.8"/>
+            <text x="30" y="105" font-size="14" fill="#333">チャンク5: 81-100</text>
+        </g>
+    </g>
+
+    <!-- ステップ1: 初期状態 -->
+    <g transform="translate(300, 100)">
+        <text x="400" y="20" text-anchor="middle" font-size="18" fill="#333">Step 1: 初期状態</text>
+        
+        <!-- Stack A -->
+        <g transform="translate(150, 0)">
+            <text x="60" y="50" text-anchor="middle" font-size="16" fill="#333">Stack A</text>
+            <rect x="10" y="60" width="100" height="220" fill="none" stroke="#333" stroke-width="2"/>
+            
+            <rect x="15" y="70" width="90" height="30" rx="3" fill="#4299e1" opacity="0.8"/>
+            <text x="60" y="90" text-anchor="middle" fill="white" font-weight="bold">15</text>
+            
+            <rect x="15" y="110" width="90" height="30" rx="3" fill="#48bb78" opacity="0.8"/>
+            <text x="60" y="130" text-anchor="middle" fill="white" font-weight="bold">38</text>
+            
+            <rect x="15" y="150" width="90" height="30" rx="3" fill="#4299e1" opacity="0.8"/>
+            <text x="60" y="170" text-anchor="middle" fill="white" font-weight="bold">12</text>
+            
+            <rect x="15" y="190" width="90" height="30" rx="3" fill="#ed8936" opacity="0.8"/>
+            <text x="60" y="210" text-anchor="middle" fill="white" font-weight="bold">67</text>
+            
+            <rect x="15" y="230" width="90" height="30" rx="3" fill="#9f7aea" opacity="0.8"/>
+            <text x="60" y="250" text-anchor="middle" fill="white" font-weight="bold">85</text>
+        </g>
+
+        <!-- Stack B -->
+        <g transform="translate(650, 0)">
+            <text x="60" y="50" text-anchor="middle" font-size="16" fill="#333">Stack B</text>
+            <rect x="10" y="60" width="100" height="220" fill="none" stroke="#333" stroke-width="2"/>
+        </g>
+    </g>
+
+    <!-- ステップ2: チャンク1処理中 -->
+    <g transform="translate(300, 400)">
+        <text x="400" y="20" text-anchor="middle" font-size="18" fill="#333">Step 2: チャンク1(1-20)の移動</text>
+        
+        <!-- Stack A -->
+        <g transform="translate(150, 0)">
+            <text x="60" y="50" text-anchor="middle" font-size="16" fill="#333">Stack A</text>
+            <rect x="10" y="60" width="100" height="220" fill="none" stroke="#333" stroke-width="2"/>
+            
+            <rect x="15" y="70" width="90" height="30" rx="3" fill="#48bb78" opacity="0.8"/>
+            <text x="60" y="90" text-anchor="middle" fill="white" font-weight="bold">38</text>
+            
+            <rect x="15" y="110" width="90" height="30" rx="3" fill="#ed8936" opacity="0.8"/>
+            <text x="60" y="130" text-anchor="middle" fill="white" font-weight="bold">67</text>
+            
+            <rect x="15" y="150" width="90" height="30" rx="3" fill="#9f7aea" opacity="0.8"/>
+            <text x="60" y="170" text-anchor="middle" fill="white" font-weight="bold">85</text>
+        </g>
+
+        <!-- 移動を示す矢印 -->
+        <path d="M300,130 L500,130" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+        <text x="400" y="110" text-anchor="middle" font-size="14" fill="#666">pb (チャンク1の要素を移動)</text>
+
+        <!-- Stack B -->
+        <g transform="translate(650, 0)">
+            <text x="60" y="50" text-anchor="middle" font-size="16" fill="#333">Stack B</text>
+            <rect x="10" y="60" width="100" height="220" fill="none" stroke="#333" stroke-width="2"/>
+            
+            <rect x="15" y="70" width="90" height="30" rx="3" fill="#4299e1" opacity="0.8"/>
+            <text x="60" y="90" text-anchor="middle" fill="white" font-weight="bold">12</text>
+            
+            <rect x="15" y="110" width="90" height="30" rx="3" fill="#4299e1" opacity="0.8"/>
+            <text x="60" y="130" text-anchor="middle" fill="white" font-weight="bold">15</text>
+        </g>
+    </g>
+
+    <!-- 矢印のマーカー定義 -->
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 L2,5 Z" fill="#666"/>
+        </marker>
+    </defs>
+</svg>
